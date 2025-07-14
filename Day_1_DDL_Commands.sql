@@ -1,7 +1,7 @@
 create database if not exists puma;
 create table if not exists puma.users (user_id varchar(30) primary key,
  user_name varchar(30) not null, 
- mail_id varchar(50) unique not null, 
+ mail_id varchar(20) unique not null, 
  phone varchar(20) unique not null, 
  DOB date, 
  city varchar(20), 
