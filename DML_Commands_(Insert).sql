@@ -1,3 +1,4 @@
+--Defining the database under operation
 use puma;
 select * from users;
 
