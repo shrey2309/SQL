@@ -1,6 +1,6 @@
 use puma;
 
--- Update Command
+-- Update Command(DML Command)
 
 -- Update using a Primary Key
 update users set user_name = 'Mishra' where user_id = '1002';
