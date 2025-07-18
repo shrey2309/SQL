@@ -10,12 +10,12 @@ update users set user_name = 'Vaibhav' , mail_id = 'vaibhi@gmail.com' where user
 update users set user_name = 'Shobhit' where user_name = 'Abhay' and mail_id = 'h@gmail.com';
 select * from users;
 
--- Delete Command
+-- Delete Command(DML Command)
 delete from users where user_id = '1004';
 delete from users where user_name = 'Ayushi' and mail_id = 'b@gmail.com';
 select * from users;
 
--- Truncate Command
+-- Truncate Command(DML Command)
 truncate table users;
 -- Won't work as users table has a column which references as a foreign key in another table
 
