@@ -56,7 +56,10 @@ select product_tag , sum(rating_count) from products
        limit 5;
        
 #13. Which brand has generated the maximum revenue ?
-
+select brand_tag , sum(rating_count*discounted_price) as 'Revenue' from products
+	group by brand_tag
+	order by Revenue desc
+	limit 1;
        
 #14.Which product category has generated maximum revenue?
 
