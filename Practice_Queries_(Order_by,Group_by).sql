@@ -41,7 +41,10 @@ select sum(rating_count) from products
        where product_tag = 'tshirts';
        
 #10. Which category among tshirts & shirts has generated more revenue ?
-
+select product_tag , sum(rating_count*discounted_price) as 'Revenue' from products
+	where product_tag in ('shrts' , 'tshirts')
+	group by product_tag
+	order by Revenue desc;
        
 #11. List top 5 best-selling brands.
 select brand_name , sum(rating_count) from products
