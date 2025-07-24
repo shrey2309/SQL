@@ -72,11 +72,11 @@ select brand_tag as 'Brand', count(product_tag) as 'No. of products',
        from products
        group by brand_tag ;
 
-
-
 -- 13. Which product_category of any brand is sold the most?
-
-       
+select brand_tag , product_tag , sum(rating_count) as 'People Rated' from products
+       group by brand_tag , product_tag 
+       order by sum(rating_count) desc limit 5;
+    
 -- 14. List top 5 brands which has sold most number of tshirts
 select brand_tag , product_tag , sum(rating_count) as 'Orders' , avg(discounted_price) as 'Average Price' from products
        where product_tag = 'tshirts'
