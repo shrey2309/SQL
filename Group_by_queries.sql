@@ -59,6 +59,19 @@ select brand_tag , product_tag , sum(rating_count) from products
        limit 5;
        
 -- 12. Brand Report Card
+select brand_tag as 'Brand', count(product_tag) as 'No. of products',
+       sum(rating_count) as 'People rated',
+       min(marked_price) as 'Minimum Marked Price',
+       avg(marked_price) as 'Average Marked Price',
+       max(marked_price) as 'Maximum Marked Price',
+	min(discounted_price) as 'Minimum Discounted Price',
+       avg(discounted_price) as 'Average Discounted Price',
+       max(discounted_price) as 'Maximum Discounted Price',
+       avg(discount_percent) as 'Average Discount Percentage',
+       sum(rating_count*discounted_price) as 'Revenue'
+       from products
+       group by brand_tag ;
+
 
 
 -- 13. Which product_category of any brand is sold the most?
