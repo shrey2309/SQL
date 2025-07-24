@@ -99,8 +99,12 @@ select brand_tag , product_tag , sum(rating_count) as 'Orders' , avg(discounted_
        limit 5;
        
 -- 17. List top 5 brands which has sold most number of dresses
+select brand_tag , product_tag , sum(rating_count) as 'Orders' , avg(discounted_price) as 'Average Price' from products
+       where product_tag = 'dresses'
+       group by brand_tag
+       order by sum(rating_count) desc
+       limit 5;
 
-       
 -- 18. Most popular product name listed in Myntra.
 select product_name , count(product_name) as 'Name Count' from products
        group by product_name
