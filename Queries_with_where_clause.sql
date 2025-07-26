@@ -72,6 +72,9 @@ select product_name , rating , rating_count, brand_tag, discounted_price from pr
        order by brand_tag asc , discounted_price asc;
        
 #16. Finding the list of tshirts from nike and adidas prices between 1000 and 2000 | Sort them based on ascending order of brand_name & price
+select product_name , rating , rating_count, brand_tag, discounted_price from products
+       where brand_tag  in('nike','adidas') and product_tag = 'tshirts' and discounted_price between 1000 and 2000
+       order by discounted_price asc, brand_tag asc;
 
 
 
