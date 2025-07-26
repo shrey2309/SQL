@@ -52,7 +52,9 @@ select product_name , rating , rating_count from products
        order by rating asc limit 10;
        
 #12. Top 10 worst rated tshirt based on the rating of 100 people atleast
-
+select product_name , rating, rating_count, brand_tag from products
+       where product_tag = 'tshirts' and rating_count > 100
+       order by rating asc limit 10;
        
 #13. Sort the products in alphaetical descending order based on their product_name and show the last 10 of them
 select product_name from products
