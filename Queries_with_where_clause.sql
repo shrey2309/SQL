@@ -62,8 +62,10 @@ select product_name from products
        limit 10;
        
 #14. Finding the top 10 best rated tshirts from nike or adidas | rating*rating count
+select product_name , rating , rating_count, brand_tag, discounted_price, round(rating*rating_count) as 'comb_rating' from products
+       where brand_tag  in('nike','adidas') and product_tag = 'tshirts'
+       order by comb_rating desc limit 10;
 
-       
 #15. Finding the list of tshirts from nike and adidas prices between 1000 and 1200 | Sort them based on ascending order of brand_name & price
 select product_name , rating , rating_count, brand_tag, discounted_price from products
        where brand_tag  in('nike','adidas') and product_tag = 'tshirts' and discounted_price between 1000 and 1200
