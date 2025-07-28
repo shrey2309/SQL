@@ -65,6 +65,9 @@ create table Enrolments (
     StudentID int,
     CourseID int,
     EnrolmentDate date,
+    primary key (StudentID, CourseID),
+    foreign key (StudentID) references Students(StudentID),
+    foreign key (CourseID) references Courses(CourseID)
     
 );
 insert into Students values 
