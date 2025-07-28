@@ -45,9 +45,12 @@ insert into Employees values
 (201, 'John', 1), 
 (202, 'Emma', 2), 
 (203, 'David', 2);
-
+select d.DeptName, e.EmpName
+from Departments d
+join Employees e on d.DeptID = e.DeptID;
 
 -- Many to many relationship
+
 create table Students (
     StudentID int primary key,
     StudentName varchar(100)
