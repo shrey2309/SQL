@@ -84,3 +84,5 @@ insert into Enrolments values
 (2, 101, '2024-01-12');
 select s.StudentName, c.CourseName, e.EnrolmentDate
 from Enrolments e
+join Students s on e.StudentID = s.StudentID
+join Courses c on e.CourseID = c.CourseID;
