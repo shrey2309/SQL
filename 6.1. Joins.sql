@@ -44,4 +44,12 @@ select * from department;
 select * from employees cross join department; 
 select count(*) from employees cross join department;  
 
+-- Cross Join all three tables
+select * from employees;
+Select * from department;
+select * from salaries;
+select * from employees cross join department cross join salaries;
+select count(*) from employees cross join department cross join salaries;
+
+
 
