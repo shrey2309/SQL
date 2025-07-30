@@ -16,4 +16,9 @@ INSERT INTO gfg.department (DepartmentID, DepartmentName) VALUES
 INSERT INTO gfg.salaries (EmployeeID, Salary) VALUES
 (1, 50000), (2, 54000), (3, 30000), (4, 60000), (5, 58000),(6,60000),(7,56000);
 
+SELECT * FROM gfg.employees;
+SELECT * FROM gfg.department;
+SELECT * FROM gfg.salaries;
+
+
 
