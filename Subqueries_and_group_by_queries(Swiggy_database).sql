@@ -38,7 +38,9 @@ select city , sum(rating_count*cost) from restaurants
        order by sum(rating_count*cost) desc;
 
 -- 9. List 10 least expensive cuisines?
-
+select cuisine , round(avg(cost),2) as 'Average Cost' from restaurants
+       group by cuisine 
+       order by round(avg(cost),2) asc limit 10;
 
 -- 10. List 10 most expensive cuisines?
 select cuisine , round(avg(cost),2) as 'Average Cost' from restaurants
