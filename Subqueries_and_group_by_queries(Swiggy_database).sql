@@ -14,8 +14,9 @@ select name, rating from restaurants
        where rating > (select avg(rating) from restaurants);
        
 -- 4. Which restaurant of Delhi has generated most revenue?
+select * , rating_count*cost as 'Revenue' from restaurants
+       where city = 'delhi' and rating_count*cost = (select max(rating_count*cost) from restaurants where city = 'delhi');
 
-       
 -- 5. Which restaurant chain has maximum number of restaurants?
 select name , count(name) as 'Number of Chains' from restaurants
        group by name 
