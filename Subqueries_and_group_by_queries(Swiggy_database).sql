@@ -54,6 +54,7 @@ select city , count(name) as 'Restaurants' from restaurants
        order by restaurants desc;
 
 -- 12. List top 10 unique restaurants with unique name only thorughout the dataset as per generate maximum revenue (Single restaurant with that name)
-
-       
+select name, sum(cost * rating_count) as 'Revenue' from restaurants 
+       group by name having count(name) = 1
+       order by revenue desc limit 10;     
 
