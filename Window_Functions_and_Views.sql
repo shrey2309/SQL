@@ -14,7 +14,7 @@ select *,
       from restaurants;
       
 #4. Row_number every restaurant from most expensive to least expensive
-select *, rank() over(partition by city order by cost desc) as 'Rank' from restaurants;
+select *, rank() over(order by cost desc) as 'Rank' from restaurants;
 
 #5. Rank every restaurant from most expensive to least as per their city and also print the city name.
 select *,
@@ -22,6 +22,11 @@ select *,
 		from restaurants;
         
 #6. List top 5 restaurants from every city based on revenue.
-
+select * from
+       (select *, 
+                 cost*rating_count as 'Revenue',
+                 row_number() over(partition by city order by cost*rating_count desc) as 'Ranking'
+                 from restaurants
+		) t where t.ranking <=5 ;
         
 #7. Find the accumulative revenue of top 5(maximum revenue) restaurants of every city.
