@@ -30,3 +30,12 @@ select * from
 		) t where t.ranking <=5 ;
         
 #7. Find the accumulative revenue of top 5(maximum revenue) restaurants of every city.
+select city , sum(Revenue) as 'Revenue' from 
+	   ( select *,
+                 cost*rating_count as 'Revenue',
+                 row_number() over(partition by city order by cost*rating_count desc) as 'Ranking'
+                 from restaurants
+		) t where t.ranking <= 5
+        group by city
+        order by sum(Revenue) desc
+        limit 15;
