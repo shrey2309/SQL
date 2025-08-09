@@ -14,7 +14,7 @@ select *,
       from restaurants;
       
 #4. Row_number every restaurant from most expensive to least expensive
-
+select *, rank() over(partition by city order by cost desc) as 'Rank' from restaurants;
 
 #5. Rank every restaurant from most expensive to least as per their city and also print the city name.
 select *,
