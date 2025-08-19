@@ -1,3 +1,4 @@
+# Defining the database to be used
 use myntra;
 
 #1. Finding the most expensive product on myntra
