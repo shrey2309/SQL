@@ -1,3 +1,4 @@
+# Defining the dataset created in the above file
 use gfg;
 
 #1 Left Join
