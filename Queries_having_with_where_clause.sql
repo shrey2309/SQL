@@ -20,7 +20,7 @@ select product_name , rating , rating_count, round(rating*rating_count) as 'comb
        order by comb_rating desc 
        limit 5; 
        
-#5. Finding the second most expensive product
+#5. Finding the 2nd most expensive product
 select product_name , discounted_price from products
        order by discounted_price desc limit 1,1;
        
@@ -72,7 +72,7 @@ select product_name , rating , rating_count, brand_tag, discounted_price from pr
        where brand_tag  in('nike','adidas') and product_tag = 'tshirts' and discounted_price between 1000 and 1200
        order by brand_tag asc , discounted_price asc;
        
-#16. Finding the list of tshirts from nike and adidas prices between 1000 and 2000 | Sort them based on ascending order of brand_name & price
+#16. Finding the list of t-shirts from nike and adidas prices between 1000 and 2000 | Sort them based on ascending order of brand_name & price
 select product_name , rating , rating_count, brand_tag, discounted_price from products
        where brand_tag  in('nike','adidas') and product_tag = 'tshirts' and discounted_price between 1000 and 2000
        order by discounted_price asc, brand_tag asc;
